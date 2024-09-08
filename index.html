@@ -23,6 +23,26 @@
             color: inherit;
         }
 
+        h1,
+        h2,
+        h3,
+        h4,
+        p {
+            margin: 0;
+        }
+
+        p,
+        span,
+        b,
+        a,
+        button {
+            transition: color var(--trans);
+        }
+
+        a{
+            text-decoration: none;
+        }
+
         .header{
             background-color:#6900CC;
             min-height: 60px;
@@ -42,7 +62,7 @@
         .quiz-container {
             text-align: center;
             width: 100%;
-            max-width: 400px;
+            max-width: 500px;
             padding: 0 16px;
         }
 
@@ -144,8 +164,6 @@
             margin-bottom: 20px;
         }
 
-        
-
         .icon-menu {
                 display: block;
                 position: relative;
@@ -199,19 +217,96 @@
 
             .gift-gallery{
                 display: flex;
+                gap: 16px;
                 flex-wrap: wrap;
+                padding: 20px 0px 0px 0px;
             }
 
             .gift-gallery a{
                 display: flex;
-                width: 50%;
+                width: calc(50% - 8px);
+                flex-direction: column;
+                background-color: #fff;
+                border-radius: 8px;
             }
+
+            .gift-image {
+            }
+            .gift-content {
+                text-align: left;
+                padding: 0 10px 10px 10px;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+            .question .gift-offer {
+                background-color: #6900CC;
+                color: #fff;
+                font-size: 14px;
+                padding: 5px 15px;
+                max-width: 150px;
+                border-radius: 10px;
+                margin-bottom: 12px;
+                text-align: center;
+            }
+            .gift-old-price {
+                color: gray;
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+            .question .gift-price {
+                color: #000;
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 8px;
+            }
+            .question .gift-restam {
+                background-color: #CFFDCA;
+                color: #34853E;
+                text-align: center;
+                font-size: 16px;
+                margin-bottom: 8px;
+                max-width: 170px;
+            }
+            .question .gift-name {
+                margin-bottom: 8px;
+                color: #000;
+            }
+            .question .gift-preta {
+                font-weight: 600;
+                font-size: 18px;
+                color: #000;
+                margin-top: auto;
+            }
+
 
             .gift-gallery img{
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
+
+            @media only screen and (max-width: 768px) {
+                .gift-gallery{
+                    display: flex;
+                    gap: 8px;
+                    flex-wrap: wrap;
+                }
+
+                .gift-gallery a{
+                    display: flex;
+                    width: calc(50% - 4px);
+                    flex-direction: column;
+                    background-color: #fff;
+                    border-radius: 8px;
+                }
+
+                .quiz{
+                    padding: 10px;
+                }
+
+            }
+
 
     </style>
 </head>
@@ -283,35 +378,137 @@
                     <p>Como forma de agradecimento, você pode escolher um item de presente gratuitamente. Escolha abaixo:</p>
                     <div class="gift-gallery">
                         <a href="#">
-                            <img src="01.png" alt="Presente 1">
+                            <div class="gift-image">
+                                <img src="01.png" alt="Presente 1">
+                            </div>
+                            <div class="gift-content">
+                                <p class="gift-offer">OFFERTA DO DIA</p>
+                                <s class="gift-old-price">R$ 781,890</s>
+                                <p class="gift-price">R$ 00,00</p>
+                                <p class="gift-restam">Restam 19 unidades</p>
+                                <p class="gift-name">Relógio Casio G-Shock Masculino</p>
+                                <p class="gift-preta">Preta</p>
+                            </div>
                         </a>
                         <a href="#">
-                            <img src="02.png" alt="Presente 2">
+                            <div class="gift-image">
+                                <img src="02.png" alt="Presente 2">
+                            </div>
+                            <div class="gift-content">
+                                <p class="gift-offer">OFFERTA DO DIA</p>
+                                <s class="gift-old-price">R$ 1.099,90</s>
+                                <p class="gift-price">R$ 00,00</p>
+                                <p class="gift-restam">Restam 11 unidades</p>
+                                <p class="gift-name">Bolsa Noelle Small Noel Tote</p>
+                                <p class="gift-preta">Preta</p>
+                            </div>
                         </a>
                         <a href="#">
-                            <img src="03.png" alt="Presente 3">
+                            <div class="gift-image">
+                                <img src="03.png" alt="Presente 3">
+                            </div>
+                            <div class="gift-content">
+                                <p class="gift-offer">OFFERTA DO DIA</p>
+                                <s class="gift-old-price">R$ 699,00</s>
+                                <p class="gift-price">R$ 00,00</p>
+                                <p class="gift-restam">Restam 12 unidades</p>
+                                <p class="gift-name">Bolsa Lacoste Transpassada L.12.12 Concept Flat Feminina</p>
+                                <p class="gift-preta">Preta</p>
+                            </div>
                         </a>
                         <a href="#">
-                            <img src="04.png" alt="Presente 4">
+                            <div class="gift-image">
+                                <img src="04.png" alt="Presente 4">
+                            </div>
+                            <div class="gift-content">
+                                <p class="gift-offer">OFFERTA DO DIA</p>
+                                <s class="gift-old-price">R$ 1.442,90</s>
+                                <p class="gift-price">R$ 00,00</p>
+                                <p class="gift-restam">Restam 7 unidades</p>
+                                <p class="gift-name">Vestido Lança Perfume Ombro Único Feminino</p>
+                                <p class="gift-preta">Preta</p>
+                            </div>
                         </a>
                         <a href="#">
-                            <img src="05.png" alt="Presente 5">
+                            <div class="gift-image">
+                                <img src="05.png" alt="Presente 5">
+                            </div>
+                            <div class="gift-content">
+                                <p class="gift-offer">OFFERTA DO DIA</p>
+                                <s class="gift-old-price">R$ 849,90</s>
+                                <p class="gift-price">R$ 00,00</p>
+                                <p class="gift-restam">Restam 19 unidades</p>
+                                <p class="gift-name">Vestido Com Babados Estampado Lança Perfume</p>
+                                <p class="gift-preta">Bege</p>
+                            </div>
                         </a>
                         <a href="#">
-                            <img src="06.png" alt="Presente 6">
+                            <div class="gift-image">
+                                <img src="06.png" alt="Presente 6">
+                            </div>
+                            <div class="gift-content">
+                                <p class="gift-offer">OFFERTA DO DIA</p>
+                                <s class="gift-old-price">R$ 899,99</s>
+                                <p class="gift-price">R$ 00,00</p>
+                                <p class="gift-restam">Restam 10 unidades</p>
+                                <p class="gift-name">Tênis Dunk Low Feminino</p>
+                                <p class="gift-preta">Rose Whisper</p>
+                            </div>
                         </a>
                         <a href="#">
-                            <img src="07.png" alt="Presente 7">
+                            <div class="gift-image">
+                                <img src="07.png" alt="Presente 7">
+                            </div>
+                            <div class="gift-content">
+                                <p class="gift-offer">OFFERTA DO DIA</p>
+                                <s class="gift-old-price">R$ 3.299,00</s>
+                                <p class="gift-price">R$ 00,00</p>
+                                <p class="gift-restam">Restam 14 unidades</p>
+                                <p class="gift-name">Apple Watch SE GPS Caixa de Alumínio 40mm Pulseira Loop</p>
+                                <p class="gift-preta">Rosa</p>
+                            </div>
                         </a>
                         <a href="#">
-                            <img src="08.png" alt="Presente 8">
+                            <div class="gift-image">
+                                <img src="08.png" alt="Presente 8">
+                            </div>
+                            <div class="gift-content">
+                                <p class="gift-offer">OFFERTA DO DIA</p>
+                                <s class="gift-old-price">R$ 899,99</s>
+                                <p class="gift-price">R$ 00,00</p>
+                                <p class="gift-restam">Restam 12 unidades</p>
+                                <p class="gift-name">Tênis Nike Dunk Low Retro</p>
+                                <p class="gift-preta">Preta</p>
+                            </div>
                         </a>
                         <a href="#">
-                            <img src="09.png" alt="Presente 9">
+                            <div class="gift-image">
+                                <img src="09.png" alt="Presente 9">
+                            </div>
+                            <div class="gift-content">
+                                <p class="gift-offer">OFFERTA DO DIA</p>
+                                <s class="gift-old-price">R$ 1299,99</s>
+                                <p class="gift-price">R$ 00,00</p>
+                                <p class="gift-restam">Restam 11 unidades</p>
+                                <p class="gift-name">Jaqueta Nike Sportswear Club Puffer Masculina</p>
+                                <p class="gift-preta">Preta</p>
+                            </div>
                         </a>
                         <a href="#">
-                            <img src="10.png" alt="Presente 10">
+                            <div class="gift-image">
+                                <img src="10.png" alt="Presente 10">
+                            </div>
+                            <div class="gift-content">
+                                <p class="gift-offer">OFFERTA DO DIA</p>
+                                <s class="gift-old-price">R$ 799,99</s>
+                                <p class="gift-price">R$ 00,00</p>
+                                <p class="gift-restam">Restam 11 unidades</p>
+                                <p class="gift-name">Jaqueta Nike SB Chore Unissex</p>
+                                <p class="gift-preta">Preta</p>
+                            </div>
                         </a>
+
+
                     </div>
                 </div>
                 
